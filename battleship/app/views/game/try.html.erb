@@ -1,4 +1,18 @@
-<h1>try page</h1>
+<h1>Hi Lo Game</h1>
 
-<p><%= @result %></p>
-<p><%= @tries %></p>
+<p><%= "#{@user_name}"%></p>
+<p><%= "#{@result}"%></p>
+
+<% if @tries && @tries > 0 %>
+<p>You have made <%= pluralize @tries, "try" %>.</p>
+<% end %>
+
+<form action="game" method="get">
+  <input type="text" name="guess" />
+  <input type="submit" value="Submit" />
+</form>
+</br>
+
+<form action="game/new_game/" method="get">
+  <input type="submit" value="New Game" />
+</form>
