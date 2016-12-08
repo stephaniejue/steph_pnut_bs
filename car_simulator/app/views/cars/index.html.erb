@@ -1,0 +1,11 @@
+<h1>Welcome to the Car Simulator</h1>
+
+<%= flash[:alert] %>
+</br>
+
+</br>
+<form action="/cars" method="get">
+  <input type="text" name="make" placeholder="make" />
+  <input type="number" name="year" placeholder="year" />
+  <input type="submit" value="Simulate car" />
+</form>
