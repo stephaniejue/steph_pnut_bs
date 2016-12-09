@@ -1,0 +1,29 @@
+<h1>This is your car</h1>
+<p>
+  Make: <%= @car.make %></br>
+  Year: <%= @car.year %></br>
+  Lights on: <%= @car.lights_on? %></br>
+  Speed: <%= @car.speed %> km/h</br>
+  Parking brake: <%= @car.parking_brake %> </br>
+</p>
+
+<form action="/cars/accelerate" method="get">
+  <input type="submit" value="Accelerate" />
+</form>
+
+<form action="/cars/brake" method="get">
+  <input type="submit" value="Brake" />
+</form>
+
+<form action="/cars/lights" method="get">
+  <input type="submit" value="Lights" />
+</form>
+
+</br>
+<p>Parking Brake:</p>
+<form action="/cars/parking_brake" method="get">
+  <input name="parking_brake" type="radio" value="On" onclick="this.form.submit();" />
+  <label for="parking_brake">On</label>
+  <input name="parking_brake" type="radio" value="Off" onclick="this.form.submit();" />
+  <label for="parking_brake">Off</label>
+</form>
