@@ -1,15 +1,20 @@
 class Car
 
-  def initialize(make, year)
+  def initialize(make, year, color)
     @make = make
     @year = year
+    @color = color
     @speed = 0
     @lights = false
     @parking_brake = "Off"
   end
 
   def accelerate
-    @speed += 10
+    if @parking_brake == "Off"
+      @speed += 10
+    else
+      @speed = @speed
+    end
   end
 
   def brake
@@ -41,11 +46,19 @@ class Car
   end
 
   def parking_brake=(brake)
-    @parking_brake = brake
+    if @speed > 0
+      @parking_brake = "Off"
+    else
+      @parking_brake = brake
+    end
   end
 
   def parking_brake
     @parking_brake
+  end
+
+  def color
+    @color
   end
 
 end

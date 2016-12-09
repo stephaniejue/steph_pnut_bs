@@ -1,6 +1,6 @@
 <h1>This is your car</h1>
 <p>
-  Make: <%= @car.make %></br>
+  Make: <span id="make_color" style="background-color:<%=@car.color%>"><%= @car.make %></span></br>
   Year: <%= @car.year %></br>
   Lights on: <%= @car.lights_on? %></br>
   Speed: <%= @car.speed %> km/h</br>
@@ -20,10 +20,14 @@
 </form>
 
 </br>
-<p>Parking Brake:</p>
+<p>Turn parking brake:</p>
 <form action="/cars/parking_brake" method="get">
-  <input name="parking_brake" type="radio" value="On" onclick="this.form.submit();" />
+  <input name="parking_brake" type="radio" value="On"/>
   <label for="parking_brake">On</label>
-  <input name="parking_brake" type="radio" value="Off" onclick="this.form.submit();" />
+  <input name="parking_brake" type="radio" value="Off"/>
   <label for="parking_brake">Off</label>
+  <input type="submit" value="Set" />
 </form>
+
+
+ <!-- onclick="this.form.submit();"  -->

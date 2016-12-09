@@ -1,11 +1,12 @@
 class CarsController < ApplicationController
 
   def index
-    if params.has_key?(:make) && params.has_key?(:make) && !params[:make].strip.empty? && !params[:year].strip.empty?
+    if params.has_key?(:make) && params.has_key?(:make) && params.has_key?(:color) && !params[:make].strip.empty? && !params[:year].strip.empty? && !params[:color].strip.empty?
     # if we have the params
       make = params[:make]
       year = params[:year]
-      @car = Car.new(make, year)
+      color = params[:color]
+      @car = Car.new(make, year, color)
       session[:car] = @car.to_yaml
       redirect_to "/cars/status"
       # make car
