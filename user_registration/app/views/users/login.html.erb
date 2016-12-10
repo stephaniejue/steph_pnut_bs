@@ -1,0 +1,9 @@
+<h1>Login Page</h1>
+
+<%= flash.now[:alert] %>
+
+<form action="/users/login" method="get">
+  <input type="text" name="user_id_login" placeholder="Enter your user ID" /></br>
+  <input type="text" name="password_login" placeholder="Enter your password" /></br></br>
+  <input type="submit" value="Log In" />
+</form>
